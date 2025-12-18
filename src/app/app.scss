@@ -1,0 +1,289 @@
+$page-max-width: 100%;
+$content-max-width: 1100px;
+
+$primary: #0b3c5d; // deep navy
+$accent: #c41e3a; // muted red
+$text-main: #1f2933;
+$text-muted: #5f6c7b;
+$border-soft: hsl(220, 13%, 91%);
+$internationalOrange: #FF4F00;
+$headerHeight: 60px;
+
+.page {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 100;
+    width: 100%;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    color: $text-main;
+
+    background-image: url('../assets/sandiego4.jpg');
+    background-size: cover;
+
+    .top {
+        position: relative;
+        display: flex;
+        align-self: flex-start;
+        flex-direction: column;
+        padding: 20px 40px;
+
+        .colored {
+            color: $internationalOrange;
+        }
+
+        .header {
+            color: white;
+            font-size: 52px;
+            font-weight: 600;
+        }
+
+        .subheader {
+            color: white;
+            font-size: 26px;
+        }
+    }
+
+    .step-one {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        width: 100%;
+        margin-top: 125px;
+
+        .address-card {
+            position: relative;
+            display: flex;
+
+            align-items: center;
+            width: 60%;
+            flex: 4;
+            padding: 24px;
+            background: #ffffff;
+
+            gap: 25px;
+            border-radius: 10px;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.16);
+
+
+            .input-wrapper {
+                width: 100%;
+
+                .label {
+                    align-items: flex-start;
+                    justify-content: flex-start;
+                    font-size: 13px;
+                    font-weight: 500;
+                    color: $text-muted;
+                    text-transform: uppercase;
+                    letter-spacing: 0.04em;
+                    margin-bottom: 12px;
+                }
+
+                input {
+                    width: calc(100% - 32px);
+                    padding: 14px 16px;
+                    font-size: 16px;
+                    border-radius: 6px;
+                    border: 1px solid $border-soft;
+                    transition: border-color 0.15s ease;
+
+                    &:focus {
+                        outline: none;
+                        border-color: $primary;
+                    }
+
+                    &::before {
+                        content: "HOME ADDRESS";
+                        position: absolute;
+
+                        color: black;
+                        font-size: 20px;
+                        top: 0;
+                    }
+
+
+
+
+                }
+            }
+
+            .audience-note {
+                font-size: 13px;
+                color: $text-muted;
+                text-align: center;
+                margin-top: 8px;
+            }
+
+            .note {
+                font-size: 12px;
+                color: $text-muted;
+                margin-top: 16px;
+                line-height: 1.4;
+            }
+        }
+    }
+
+
+
+    .step-two {
+
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        width: 40%;
+        margin-top: 55px;
+
+        .contact-card {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            // flex: 4;
+            padding: 24px;
+            background: #ffffff;
+
+            gap: 14px;
+            border-radius: 10px;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.16);
+
+            .label {
+                font-size: 13px;
+                font-weight: 500;
+                color: $text-muted;
+                text-transform: uppercase;
+                letter-spacing: 0.04em;
+            }
+
+            input {
+                width: calc(100% - 32px);
+                padding: 14px 16px;
+                font-size: 16px;
+                border-radius: 6px;
+                border: 1px solid $border-soft;
+                transition: border-color 0.15s ease;
+
+                &:focus {
+                    outline: none;
+                    border-color: $primary;
+                }
+            }
+
+            button {
+                width: 500px;
+                align-self: center;
+                padding: 16px;
+                font-size: 16px;
+                font-weight: 600;
+                background-color: $accent;
+                color: #ffffff;
+                border: none;
+                border-radius: 6px;
+                cursor: pointer;
+                transition: background-color 0.15s ease;
+
+                &:hover:not(:disabled) {
+                    background-color: darken($accent, 6%);
+                }
+
+                &:disabled {
+                    background-color: #c9c9c9;
+                    cursor: not-allowed;
+                }
+            }
+        }
+
+        .process-container {
+            display: flex;
+            // height: 120px;
+            width: 80%;
+            justify-content: space-between;
+            align-items: center;
+            gap: 32px;
+            // margin-top: 40px;
+            padding: 30px;
+            color: $text-muted;
+            margin-top: 200px;
+            // background: $primary;
+            // border-radius: 18px;
+
+            .process {
+                // background: $primary;
+
+                background: rgba(255, 255, 255, 0.631);
+                border-radius: 7px;
+                border-left: 3px solid $accent;
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                padding: 15px;
+                height: 30px;
+                flex: 1;
+                // flex: 1.2;
+
+                font-size: 16px;
+                font-weight: 700;
+
+                .number {
+                    background: $accent;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.16);
+                    color: white;
+                    font-size: 25px;
+                    line-height: 30px;
+                    min-width: 50px;
+                    min-height: 50px;
+                    border-radius: 50%;
+
+                }
+            }
+
+        }
+
+    }
+
+    button {
+        position: relative;
+        width: 30%;
+        margin-top: 50px;
+        height: 47px;
+        padding: 16px;
+        font-size: 16px;
+        font-weight: 600;
+        background-color: $internationalOrange;
+        color: #ffffff;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: background-color 0.15s ease;
+
+        &:hover:not(:disabled) {
+            background-color: #8c182b;
+        }
+
+        &:disabled {
+            background-color: $internationalOrange;
+            cursor: not-allowed;
+        }
+    }
+
+    .footer {
+        // margin-top: 80px;
+        padding: 24px;
+        font-size: 12px;
+        color: $text-muted;
+        text-align: center;
+    }
+}
