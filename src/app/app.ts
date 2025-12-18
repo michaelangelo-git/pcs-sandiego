@@ -31,7 +31,7 @@ export class App {
     params.append('email', this.email);
     params.append('phone', this.phone);
 
-    fetch('https://script.google.com/macros/s/AKfycbyw2JwtP0JLa_9Js9-ZJz00QHalUhVveryQHpY6InNvwvkXiJQC9hMfmIImIgXSuyLI/exec', {
+    fetch('https://script.google.com/macros/s/AKfycbybL9iEGFreWsuF7uBfkg8gIeRTfSFw_KpkSLlCncDA57z9MEMlcvFOZHa1GLm_jo6P/exec', {
       method: 'POST',
       body: params
     })
