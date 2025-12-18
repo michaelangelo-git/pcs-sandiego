@@ -9,7 +9,7 @@ import { FormsModule } from '@angular/forms';
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })
-export class App{
+export class App {
   step = 1;
 
   address = '';
@@ -24,16 +24,28 @@ export class App{
   }
 
   submitLead() {
-    const lead = {
-      address: this.address,
-      firstName: this.firstName,
-      lastName: this.lastName,
-      email: this.email,
-      phone: this.phone
-    };
+    const params = new URLSearchParams();
+    params.append('address', this.address);
+    params.append('firstName', this.firstName);
+    params.append('lastName', this.lastName);
+    params.append('email', this.email);
+    params.append('phone', this.phone);
 
-    console.log('Lead submitted:', lead);
-
-    alert('Thank you. A PCS specialist will contact you shortly.');
+    fetch('https://script.google.com/macros/s/AKfycbyw2JwtP0JLa_9Js9-ZJz00QHalUhVveryQHpY6InNvwvkXiJQC9hMfmIImIgXSuyLI/exec', {
+      method: 'POST',
+      body: params
+    })
+      .then(() => {
+        alert('Thank you. A PCS specialist will contact you shortly.');
+        this.step = 1;
+      })
+      .catch(err => {
+        console.error(err);
+        alert('Submission failed.');
+      });
   }
+
+
+
+
 }
