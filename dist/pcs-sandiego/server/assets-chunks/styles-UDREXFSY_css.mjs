@@ -1,0 +1,2 @@
+export default `html,body{position:relative;min-height:100vh;width:100%;margin:0;padding:0;overflow:hidden;font-family:Zalando Sans Expanded,sans-serif;font-optical-sizing:auto;font-weight:200;font-style:normal}
+`;
