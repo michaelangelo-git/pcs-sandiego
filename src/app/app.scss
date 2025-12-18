@@ -98,19 +98,6 @@ $headerHeight: 60px;
                         outline: none;
                         border-color: $primary;
                     }
-
-                    &::before {
-                        content: "HOME ADDRESS";
-                        position: absolute;
-
-                        color: black;
-                        font-size: 20px;
-                        top: 0;
-                    }
-
-
-
-
                 }
             }
 
@@ -290,112 +277,117 @@ $headerHeight: 60px;
 
 @media (max-width: 767px) {
 
-    .page {
-        .top {
-             padding: 10px 20px;
-            .header {
-                font-size: 32px;
+    html,
+    body {
+        .page {
+            .top {
+                padding: 10px 20px;
+
+                .header {
+                    font-size: 32px;
+                }
+
+                .subheader {
+                    font-size: 16px;
+                }
             }
 
-            .subheader {
-                font-size: 16px;
+            .step-one {
+                margin-top: 100px;
+
+                .address-card {
+                    width: 70%;
+                    padding: 12px;
+
+
+                    .input-wrapper {
+
+                        .label {
+                            align-items: flex-start;
+                            justify-content: flex-start;
+                            font-size: 9px;
+                            text-transform: uppercase;
+                            letter-spacing: 0.04em;
+                            margin-bottom: 4px;
+                        }
+
+                        input {
+                            width: calc(100% - 20px);
+                            padding: 8px 10px;
+                            font-size: 16px;
+                            border-radius: 6px;
+                            border: 1px solid hsl(220, 13%, 91%);
+                            transition: border-color 0.15s ease;
+                        }
+                    }
+                }
             }
-        }
-
-        .step-one {
-            margin-top: 100px;
-
-            .address-card {
-                width: 70%;
-                padding: 12px;
 
 
-                .input-wrapper {
+            .step-two {
+
+                position: relative;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                height: 100%;
+                width: 65%;
+                margin-top: 55px;
+
+                .contact-card {
+                    position: relative;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    width: 100%;
+                    // flex: 4;
+                    padding: 12px;
+                    background: #ffffff;
+
+                    gap: 14px;
+                    border-radius: 10px;
+                    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.16);
 
                     .label {
-                        align-items: flex-start;
-                        justify-content: flex-start;
-                        font-size: 9px;
+                        font-size: 10px;
+                        font-weight: 500;
+                        color: $text-muted;
                         text-transform: uppercase;
                         letter-spacing: 0.04em;
-                        margin-bottom: 4px;
                     }
 
                     input {
                         width: calc(100% - 20px);
                         padding: 8px 10px;
-                        font-size: 16px;
+                        font-size: 12px;
                         border-radius: 6px;
-                        border: 1px solid hsl(220, 13%, 91%);
+                        border: 1px solid $border-soft;
                         transition: border-color 0.15s ease;
+
+                        &:focus {
+                            outline: none;
+                            border-color: $primary;
+                        }
                     }
-                }
-            }
-        }
 
+                    .note {
+                        font-size: 7px;
+                    }
 
-        .step-two {
-
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 100%;
-            width: 65%;
-            margin-top: 55px;
-
-            .contact-card {
-                position: relative;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                width: 100%;
-                // flex: 4;
-                padding: 12px;
-                background: #ffffff;
-
-                gap: 14px;
-                border-radius: 10px;
-                box-shadow: 0 12px 30px rgba(0, 0, 0, 0.16);
-
-                .label {
-                    font-size: 10px;
-                    font-weight: 500;
-                    color: $text-muted;
-                    text-transform: uppercase;
-                    letter-spacing: 0.04em;
-                }
-
-                input {
-                    width: calc(100% - 20px);
-                    padding: 8px 10px;
-                    font-size: 12px;
-                    border-radius: 6px;
-                    border: 1px solid $border-soft;
-                    transition: border-color 0.15s ease;
-
-                    &:focus {
-                        outline: none;
-                        border-color: $primary;
+                    button {
+                        width: 55%;
+                        font-size: 12px;
                     }
                 }
 
-                .note {
-                    font-size: 7px;
-                }
-
-                button {
-                    width: 55%;
-                    font-size: 12px;
-                }
             }
 
-        }
-
-        button {
-            width: 55%;
-            font-size: 12px;
+            button {
+                width: 55%;
+                font-size: 12px;
+            }
         }
     }
+
 }
