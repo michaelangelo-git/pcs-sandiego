@@ -14,6 +14,6 @@ export default `<!doctype html>
 
 <body ngcm="">
   <app-root></app-root>
-<script src="main-KAMPGT4E.js" type="module"></script></body>
+<script src="main-PYUCGFLF.js" type="module"></script></body>
 
 </html>`;

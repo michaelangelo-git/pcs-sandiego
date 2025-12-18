@@ -23,27 +23,33 @@ export class App {
     this.step = 2;
   }
 
-  submitLead() {
-    const params = new URLSearchParams();
-    params.append('address', this.address);
-    params.append('firstName', this.firstName);
-    params.append('lastName', this.lastName);
-    params.append('email', this.email);
-    params.append('phone', this.phone);
+submitLead() {
+  const lead = {
+    address: this.address,
+    firstName: this.firstName,
+    lastName: this.lastName,
+    email: this.email,
+    phone: this.phone
+  };
 
-    fetch('https://script.google.com/macros/s/AKfycbybL9iEGFreWsuF7uBfkg8gIeRTfSFw_KpkSLlCncDA57z9MEMlcvFOZHa1GLm_jo6P/exec', {
-      method: 'POST',
-      body: params
+  fetch('https://square-dew-d766.michaellostrittojr.workers.dev/', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(lead)
+  })
+    .then(res => res.json())
+    .then(() => {
+      alert('Thank you. A PCS specialist will contact you shortly.');
+      this.step = 1;
     })
-      .then(() => {
-        alert('Thank you. A PCS specialist will contact you shortly.');
-        this.step = 1;
-      })
-      .catch(err => {
-        console.error(err);
-        alert('Submission failed.');
-      });
-  }
+    .catch(err => {
+      console.error(err);
+      alert('Submission failed.');
+    });
+}
+
 
 
 
