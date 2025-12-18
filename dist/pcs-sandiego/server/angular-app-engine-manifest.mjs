@@ -1,6 +1,6 @@
 
 export default {
-  basePath: '/',
+  basePath: 'pcs-sandiego',
   supportedLocales: {
   "en-US": ""
 },
