@@ -1,17 +1,26 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-
+import { NgSelectModule } from '@ng-select/ng-select';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, NgSelectModule],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })
 export class App {
   step = 1;
-
+  public installations: string[] = [ 
+    "Naval Base San Diego", 
+    "Naval Base Coronado", 
+    "Naval Base Point Loma", 
+    "Marine Corps Air Station Miramar", 
+    "Marine Corps Recruit Depot San Diego",
+    "Marine Corps Base Camp Pendleton",
+    "U.S. Coast Guard Sector and Air Station San Diego"
+  ]
+  selected: any;
   address = '';
   firstName = '';
   lastName = '';
@@ -19,13 +28,13 @@ export class App {
   phone = '';
 
   goToStep2() {
-    if (!this.address) return;
+    if (!this.selected) return;
     this.step = 2;
   }
 
 submitLead() {
   const lead = {
-    address: this.address,
+    address: this.selected,
     firstName: this.firstName,
     lastName: this.lastName,
     email: this.email,

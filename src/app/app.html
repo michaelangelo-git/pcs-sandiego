@@ -1,8 +1,24 @@
 <div class="page">
 
   <div class="top">
-    <div class="header">TO SERVICE MEMBERS IN <span class="colored">SAN DIEGO</span>,</div>
-    <div class="subheader">BUYING A <span class="colored">HOME</span>? WE GOT <span class="colored">YOU</span> COVERED.
+    <div class="header">TO SERVICE MEMBERS MOVING TO <span class="colored">SAN DIEGO</span>,</div>
+    <div class="subheader">THANKS FOR SERVING US, WE WANT TO SERVE <span class="colored">YOU</span>.</div>
+  </div>
+
+  <div class="process-container">
+    <div class="process">
+      <div class="number">1</div>
+      <div class="text">Share your next PCS</div>
+    </div>
+    <div class="process">
+      <div class="number">2</div>
+      <div class="text"> We review your options</div>
+
+    </div>
+    <div class="process">
+      <div class="number">3</div>
+      <div class="text">A specialist reaches out</div>
+
     </div>
   </div>
 
@@ -11,14 +27,15 @@
 
       <div class="address-card">
         <div class="input-wrapper">
-          <div class="label">HOME ADDRESS</div>
-          <input type="text" placeholder="123 Main St, San Diego, CA" [(ngModel)]="address" />
+          <div class="label">WHERE WILL YOU BE STATIONED?</div>
+          <ng-select placeholder="Select your military installation" [items]="installations" [(ngModel)]="selected">
+          </ng-select>
         </div>
       </div>
 
     </div>
 
-    <button (click)="goToStep2()" [disabled]="!address"> Explore PCS Purchase Options </button>
+    <button (click)="goToStep2()" [disabled]="!selected"> Explore PCS Purchase Options </button>
   </ng-container>
 
   <ng-container *ngIf="step === 2">
@@ -35,7 +52,7 @@
 
 
         <p class="note">
-          Your information is used only to assist with your PCS home sale.
+          Your information is used only to assist with finding your PCS home.
         </p>
       </div>
 
@@ -45,26 +62,12 @@
 
 
 
-  <!-- <p class="audience-note">
-            Built specifically for San Diego military homeowners navigating PCS orders.
-          </p> -->
-  <!-- 
-    <div class="process-container">
-      <div class="process">
-        <div class="number">1</div>
-        <div class="text">Share your current home address</div>
-      </div>
-      <div class="process">
-        <div class="number">2</div>
-        <div class="text"> We review PCS-related options</div>
-
-      </div>
-      <div class="process">
-        <div class="number">3</div>
-        <div class="text">A specialist reaches out</div>
-
-      </div>
-    </div> -->
+  <div class="audience-note">
+    <div>Built specifically for service members navigating PCS orders.</div>
+    <div>
+      Independent relocation guidance. Not affiliated with the U.S. Department of Defense.
+    </div>
+  </div>
 
 
 
@@ -81,7 +84,11 @@
 
 
 
-  <!-- <footer class="footer">
-    Independent relocation guidance. Not affiliated with the U.S. Department of Defense.
-  </footer> -->
+
+
+
+
+  <footer class="footer">
+
+  </footer>
 </div>

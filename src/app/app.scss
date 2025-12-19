@@ -6,7 +6,7 @@ $accent: #c41e3a; // muted red
 $text-main: #1f2933;
 $text-muted: #5f6c7b;
 $border-soft: hsl(220, 13%, 91%);
-$internationalOrange: #FF4F00;
+$internationalOrange: #ff4f00;
 $headerHeight: 60px;
 
 .page {
@@ -21,7 +21,7 @@ $headerHeight: 60px;
     padding: 0;
     color: $text-main;
 
-    background-image: url('../assets/sandiego4.jpg');
+    background-image: url("../assets/sandiego4.jpg");
     background-size: cover;
 
     .top {
@@ -44,6 +44,7 @@ $headerHeight: 60px;
         .subheader {
             color: white;
             font-size: 26px;
+            font-weight: 500;
         }
     }
 
@@ -56,7 +57,9 @@ $headerHeight: 60px;
         height: 100%;
         width: 100%;
         margin-top: 125px;
-
+        /*        ng-select{
+            cursor: pointer;
+        } */
         .address-card {
             position: relative;
             display: flex;
@@ -70,7 +73,6 @@ $headerHeight: 60px;
             gap: 25px;
             border-radius: 10px;
             box-shadow: 0 12px 30px rgba(0, 0, 0, 0.16);
-
 
             .input-wrapper {
                 width: 100%;
@@ -117,10 +119,7 @@ $headerHeight: 60px;
         }
     }
 
-
-
     .step-two {
-
         position: relative;
         display: flex;
         flex-direction: column;
@@ -180,7 +179,7 @@ $headerHeight: 60px;
                 transition: background-color 0.15s ease;
 
                 &:hover:not(:disabled) {
-                    background-color: darken($accent, 6%);
+                    background-color: $internationalOrange;
                 }
 
                 &:disabled {
@@ -189,56 +188,54 @@ $headerHeight: 60px;
                 }
             }
         }
+    }
 
-        .process-container {
-            display: flex;
-            // height: 120px;
-            width: 80%;
-            justify-content: space-between;
-            align-items: center;
-            gap: 32px;
-            // margin-top: 40px;
-            padding: 30px;
-            color: $text-muted;
-            margin-top: 200px;
+    .process-container {
+        display: flex;
+        width: 60%;
+        align-items: center;
+        gap: 32px;
+
+        padding: 30px;
+        color: $text-muted;
+        margin-top: 125px;
+
+
+        .process {
             // background: $primary;
-            // border-radius: 18px;
 
-            .process {
-                // background: $primary;
+            border-radius: 7px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
 
-                background: rgba(255, 255, 255, 0.631);
-                border-radius: 7px;
-                border-left: 3px solid $accent;
+            height: 30px;
+            flex: 1;
+
+            color: white;
+            font-size: 16px;
+            font-weight: 700;
+
+            .number {
+                background: $internationalOrange;
                 display: flex;
                 align-items: center;
-                gap: 12px;
-                padding: 15px;
-                height: 30px;
-                flex: 1;
-                // flex: 1.2;
-
-                font-size: 16px;
-                font-weight: 700;
-
-                .number {
-                    background: $accent;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.16);
-                    color: white;
-                    font-size: 25px;
-                    line-height: 30px;
-                    min-width: 50px;
-                    min-height: 50px;
-                    border-radius: 50%;
-
-                }
+                justify-content: center;
+                box-shadow: 0 12px 30px rgba(0, 0, 0, 0.16);
+                color: white;
+                font-size: 25px;
+                line-height: 30px;
+                min-width: 50px;
+                min-height: 50px;
+                border-radius: 50%;
             }
-
         }
+    }
 
+    .audience-note {
+        margin-top: 200px;
+        text-align: center;
+        color: white;
     }
 
     button {
@@ -265,18 +262,9 @@ $headerHeight: 60px;
             cursor: not-allowed;
         }
     }
-
-    .footer {
-        // margin-top: 80px;
-        padding: 24px;
-        font-size: 12px;
-        color: $text-muted;
-        text-align: center;
-    }
 }
 
-@media (max-width: 767px) {
-
+@media (max-width: 767px  ) {
     html,
     body {
         .page {
@@ -299,9 +287,7 @@ $headerHeight: 60px;
                     width: 70%;
                     padding: 12px;
 
-
                     .input-wrapper {
-
                         .label {
                             align-items: flex-start;
                             justify-content: flex-start;
@@ -323,9 +309,7 @@ $headerHeight: 60px;
                 }
             }
 
-
             .step-two {
-
                 position: relative;
                 display: flex;
                 flex-direction: column;
@@ -380,7 +364,6 @@ $headerHeight: 60px;
                         font-size: 12px;
                     }
                 }
-
             }
 
             button {
@@ -389,5 +372,4 @@ $headerHeight: 60px;
             }
         }
     }
-
 }
